@@ -3,16 +3,8 @@ const NavBar = () => {
         <nav className="navbar">
             <h1>Me-Blog</h1>
             <div className="links">
-                <a href="/" style={{
-                    color: "white",
-                    backgroundColor: "#f1356d",
-                    borderRadius: "8px"
-                }}>Home</a>
-                <a href="/create" style={{
-                    color: "white",
-                    backgroundColor: "#f1356d",
-                    borderRadius: "8px"
-                }}>New Blog</a>
+                <a href="/">Home</a>
+                <a href="/create">New Blog</a>
             </div>
         </nav>
 

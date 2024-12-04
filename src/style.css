@@ -20,12 +20,37 @@
   margin-left: auto;
 }
 .navbar a {
+  color: #ffffff;
+  background-color: #f1356d;
+  border-radius: 8px;
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
 }
+.navbar a:hover {
+  box-shadow: 5px 10px 15px rgba(0,0,0,0.25);
+}
+
 .content {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
+}
+
+.blog-preview {
+  padding: 10px 16px;
+  background-color: #f39db0;
+  border-radius: 8px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+
+.blog-preview h2 {
+  color: #f1356d;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.blog-preview:hover {
+  box-shadow: 5px 10px 15px rgba(0,0,0,0.1);
 }
