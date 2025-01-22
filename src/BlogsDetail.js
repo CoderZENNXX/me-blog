@@ -8,7 +8,7 @@ const BlogsDetail = () => {
     const history = useHistory()
 
     const handleDelete = () => {
-        fetch("http://localhost:8000/blogs", {
+        fetch("http://localhost:8000/blogs/" + blogs.id, {
             method: "DELETE"
         })
         .then(() => {
