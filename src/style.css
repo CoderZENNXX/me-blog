@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+/* base styles */
 * {
   margin: 0;
   font-family: "Quicksand";
@@ -49,4 +50,22 @@
 }
 .blog-preview a{
   text-decoration: none;
+}
+
+/* blog details page */
+.blogs-detail h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.blogs-detail div {
+  margin: 20px 0;
+}
+.blogs-detail button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }
