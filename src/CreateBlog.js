@@ -26,6 +26,7 @@ const CreateBlog = () => {
 
     return (
         <div className="create">
+            <button className="back-arrow" onClick={() => history.go(-1)}>↩</button>
             <h2>Add a new blog</h2>
             <form onSubmit={handleSubmit}>
                 <label>Title:</label>
@@ -54,7 +55,7 @@ const CreateBlog = () => {
                 >
                 </input>
 
-                {!isLoading && <button>Add Blog</button>}
+                {!isLoading && <button class="add-blog">Add Blog</button>}
                 {isLoading && <button disabled>Adding Blog....</button>}
 
             </form>

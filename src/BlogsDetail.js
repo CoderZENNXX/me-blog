@@ -18,14 +18,17 @@ const BlogsDetail = () => {
 
     return (
     <div className="blogs-detail">
+        <button className="back-arrow" onClick={() => history.go(-1)}>↩</button>
         <h2>
             {IsLoading && <div>Loading....</div>}
             {IsError && <div>{IsError}</div>}
             {blogs && (
                 <article>
                     <h2>{blogs.title}</h2>
-                    <div>{blogs.body}</div>
-                    <p>Written by {blogs.author}</p>
+                    <br></br>
+                    <p>{blogs.body}</p>
+                    <br></br>
+                    <p className="author">Written by {blogs.author}</p>
                 </article>
             )
             }

@@ -1,12 +1,6 @@
 {
   "blogs": [
     {
-      "id": "6519",
-      "title": "COMPLETED",
-      "body": "This app written by Tayzar Naing over a duration of 1 month.",
-      "author": "Tayzar Naing"
-    },
-    {
       "id": "72d0",
       "title": "new one",
       "body": "dfsfdsf",
@@ -17,6 +11,18 @@
       "title": "new blog 1",
       "body": "akekfe",
       "author": "khant"
+    },
+    {
+      "id": "a154",
+      "title": "New Title",
+      "body": "This is a fking text",
+      "author": "Myauk"
+    },
+    {
+      "id": "ccf7",
+      "title": "Today Diary",
+      "body": "Here is my no 1. No 2 \nHere is my no 1. No 2 \nHere is my no 1. No 2 \nHere is my no 1. No 2 \nHere is my no 1. No 2 \nHere is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 ",
+      "author": "Myauk"
     }
   ]
 }
