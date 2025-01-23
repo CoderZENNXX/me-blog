@@ -24,7 +24,7 @@ const BlogsDetail = () => {
             {IsError && <div>{IsError}</div>}
             {blogs && (
                 <article>
-                    <h2>{blogs.title}</h2>
+                    <h2 class="title">{blogs.title}</h2>
                     <br></br>
                     <p>{blogs.body}</p>
                     <br></br>

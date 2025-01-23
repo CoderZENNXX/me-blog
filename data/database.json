@@ -1,27 +1,9 @@
 {
   "blogs": [
     {
-      "id": "72d0",
-      "title": "new one",
-      "body": "dfsfdsf",
-      "author": "khant"
-    },
-    {
-      "id": "5792",
-      "title": "new blog 1",
-      "body": "akekfe",
-      "author": "khant"
-    },
-    {
       "id": "a154",
       "title": "New Title",
       "body": "This is a fking text",
-      "author": "Myauk"
-    },
-    {
-      "id": "ccf7",
-      "title": "Today Diary",
-      "body": "Here is my no 1. No 2 \nHere is my no 1. No 2 \nHere is my no 1. No 2 \nHere is my no 1. No 2 \nHere is my no 1. No 2 \nHere is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 Here is my no 1. No 2 ",
       "author": "Myauk"
     }
   ]
