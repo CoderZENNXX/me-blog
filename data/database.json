@@ -1,10 +1,10 @@
 {
   "blogs": [
     {
-      "id": "a154",
       "title": "New Title",
-      "body": "This is a fking text",
-      "author": "Myauk"
+      "body": "This is a fking text and it was edited",
+      "author": "Myauk",
+      "id": "a154"
     }
   ]
 }

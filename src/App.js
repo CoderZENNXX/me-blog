@@ -4,6 +4,7 @@ import CreateBlog from './CreateBlog';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import BlogsDetail from "./BlogsDetail";
 import Page404 from "./Page404";
+import UpdateBlog from "./UpdateBlog";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
             </Route>
             <Route path="/createBlog">
               <CreateBlog></CreateBlog>
+            </Route>
+            <Route path="/blogs/:id/edit">
+              <UpdateBlog></UpdateBlog>
             </Route>
             <Route path="/blogs/:id">
               <BlogsDetail></BlogsDetail>

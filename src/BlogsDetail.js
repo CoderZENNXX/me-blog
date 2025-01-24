@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const BlogsDetail = () => {
     const {id} = useParams();
@@ -34,7 +35,8 @@ const BlogsDetail = () => {
             }
         </h2>
 
-        <button onClick={handleDelete}>Delete Blog</button>
+        <button className="blog-button"onClick={handleDelete}>Delete Blog</button>
+        <button className="blog-button"><Link to={`/blogs/${id}/edit`}>Edit Blog</Link></button>
     </div>
     );
 }

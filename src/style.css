@@ -79,6 +79,13 @@
   border-radius: 8px;
   cursor: pointer;
 }
+.blogs-detail a {
+  color: white;
+  text-decoration: none;
+}
+.blogs-detail .blog-button {
+  margin-right: 10px
+}
 .blogs-detail .back-arrow {
   font-size: 50px;
   color: black;
@@ -135,5 +142,50 @@
   align-content: left;
 }
 .create .back-arrow:hover {
+  color: #f1356d;
+}
+
+.update {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.update label {
+  text-align: left;
+  display: block;
+}
+.update h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.update input, .update textarea, .update select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.update button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.update .update-done {
+  text-align: center;
+  display: block;
+  margin: 0 auto
+}
+.update .back-arrow{
+  font-size: 50px;
+  color: black;
+  background: none;
+  align-content: left;
+}
+.update .back-arrow:hover {
   color: #f1356d;
 }
