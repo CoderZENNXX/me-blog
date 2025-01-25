@@ -8,6 +8,7 @@ const UpdateBlog = () => {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [author, setAuthor] = useState("");
+    const [openingId, setOpeningId] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const {id} = useParams();
     const {data: blogs} = useFetch("http://localhost:8000/blogs/" + id)
@@ -18,12 +19,13 @@ const UpdateBlog = () => {
             setTitle(blogs.title);
             setBody(blogs.body);
             setAuthor(blogs.author);
+            setOpeningId(blogs.openingId)
         }
     }, [blogs]);
 
     const handleEdit = (e) => {
         e.preventDefault()
-        const blog = {title, body, author}
+        const blog = {title, body, author, openingId}
 
         fetch("http://localhost:8000/blogs/" + blogs.id, {
             method: "PUT",
@@ -65,6 +67,14 @@ const UpdateBlog = () => {
                 required
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
+                >
+                </input>
+
+                <label>ID:</label>
+                <input 
+                type="text"
+                value={openingId}
+                onChange={(e) => setOpeningId(e.target.value)}
                 >
                 </input>
 

@@ -5,12 +5,13 @@ const CreateBlog = () => {
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const [author, setAuthor] = useState("");
+    const [openingId, setOpeningId] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const blog = {title, body, author}
+        const blog = {title, body, author, openingId}
 
         fetch("http://localhost:8000/blogs", {
             method: "POST",
@@ -52,6 +53,14 @@ const CreateBlog = () => {
                 required
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
+                >
+                </input>
+
+                <label>ID:</label>
+                <input 
+                type="text"
+                value={openingId}
+                onChange={(e) => setOpeningId(e.target.value)}
                 >
                 </input>
 
