@@ -25,7 +25,14 @@ const UpdateBlog = () => {
 
     const handleEdit = (e) => {
         e.preventDefault()
-        const blog = {title, body, author, openingId}
+        const today = new Date();
+        const month = today.getMonth()+1;
+        const year = today.getFullYear();
+        const day = today.getDate();
+        const hour = today.getHours();
+        const minute = today.getMinutes();
+        const date = day + "/" + month + "/" + year + ", " + hour + ":" + minute;
+        const blog = {title, body, author, openingId, date}
 
         fetch("http://localhost:8000/blogs/" + blogs.id, {
             method: "PUT",

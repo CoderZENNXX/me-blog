@@ -3,12 +3,14 @@ import useFetch from "./useFetch";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { usePDF } from "react-to-pdf";
 
 const BlogsDetail = () => {
     const { id } = useParams();
     const { data: blogs, IsError, IsLoading } = useFetch("http://localhost:8000/blogs/" + id);
     const [openingIdValue, setOpeningIdValue] = useState("");
     const [isOpeningIdValue, setIsOpeningIdValue] = useState(false);
+    const { toPDF, targetRef } = usePDF({filename: 'blog.pdf'});
     const history = useHistory();
 
     const handleDelete = () => {
@@ -54,12 +56,11 @@ const BlogsDetail = () => {
                         {IsLoading && <div>Loading....</div>}
                         {IsError && <div>{IsError}</div>}
                         {blogs && (
-                            <article>
+                            <article ref={targetRef}>
                                 <h2 className="title">{blogs.title}</h2>
-                                <br />
-                                <p>{blogs.body}</p>
-                                <br />
-                                <p className="author">Written by {blogs.author}</p>
+                                <pre>{blogs.body}</pre>
+                                <p className="details">Written by {blogs.author}</p>
+                                <p className="details">Last edited at {blogs.date}</p>
                             </article>
                         )}
                     </>
@@ -74,6 +75,7 @@ const BlogsDetail = () => {
                     <button className="blog-button">
                         <Link to={`/blogs/${id}/edit`}>Edit Blog</Link>
                     </button>
+                    <button onClick={() => toPDF()}>Download PDF</button>
                 </>
             )}
         </div>

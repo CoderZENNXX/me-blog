@@ -61,12 +61,12 @@
 .blogs-detail div {
   margin: 20px 0;
 }
-.blogs-detail p {
+.blogs-detail pre, p {
   font-size: 20px;
   font-family: Calibri;
   font-weight: lighter;
 }
-.blogs-detail .author {
+.blogs-detail .details {
   font-size: 15px;
   color: darkgray;
   text-align: right;
@@ -82,6 +82,9 @@
 .blogs-detail a {
   color: white;
   text-decoration: none;
+}
+.blogs-detail article {
+  padding-left: 10px;
 }
 .blogs-detail .blog-button {
   margin-right: 10px
