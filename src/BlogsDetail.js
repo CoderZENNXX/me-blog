@@ -40,7 +40,7 @@ const BlogsDetail = () => {
                         <label>Blog ID</label>
                         <p>(If there's no ID, click View Blog without any input.)</p>
                         <input
-                            type="text"
+                            type="password"
                             value={openingIdValue}
                             onChange={(e) => setOpeningIdValue(e.target.value)}
                         />
