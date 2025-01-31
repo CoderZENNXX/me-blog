@@ -39,6 +39,7 @@
   padding: 10px 16px;
   margin: 20px 0;
   border-bottom: 1px solid #fafafa;
+  overflow-wrap: anywhere;
 }
 .blog-preview:hover {
   box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
@@ -62,7 +63,7 @@
   margin: 20px 0;
 }
 .blogs-detail pre, p {
-  font-size: 20px;
+  font-size: 18px;
   font-family: Calibri;
   font-weight: lighter;
 }
@@ -84,18 +85,30 @@
   text-decoration: none;
 }
 .blogs-detail article {
-  padding-left: 10px;
+  padding-left: 20px;
+}
+.blogs-detail .title {
+  overflow-wrap: anywhere;
+}
+.blogs-detail article .body {
+  padding-left: 5px;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+.blogs-detail article .details {
+  overflow-wrap: anywhere;
 }
 .blogs-detail .blog-button {
   margin-right: 10px
 }
-.blogs-detail .back-arrow {
-  font-size: 50px;
+.back-arrow-div .back-arrow {
+  font-size: 25px;
   color: black;
   background: none;
-  align-content: left;
+  border: 0;
+  padding-bottom: 20px;
 }
-.blogs-detail .back-arrow:hover {
+.back-arrow-div .back-arrow:hover {
   color: #f1356d;
 }
 .blogs-detail .title {
@@ -147,7 +160,6 @@
 .create .back-arrow:hover {
   color: #f1356d;
 }
-
 .update {
   max-width: 400px;
   margin: 0 auto;

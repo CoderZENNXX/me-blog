@@ -3,14 +3,15 @@ import useFetch from "./useFetch";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { usePDF } from "react-to-pdf";
+import {useRef} from "react";
+import generatePDF, {Resolution} from "react-to-pdf";
 
 const BlogsDetail = () => {
     const { id } = useParams();
     const { data: blogs, IsError, IsLoading } = useFetch("http://localhost:8000/blogs/" + id);
     const [openingIdValue, setOpeningIdValue] = useState("");
     const [isOpeningIdValue, setIsOpeningIdValue] = useState(false);
-    const { toPDF, targetRef } = usePDF({filename: 'blog.pdf'});
+    const targetRef = useRef();
     const history = useHistory();
 
     const handleDelete = () => {
@@ -31,9 +32,22 @@ const BlogsDetail = () => {
         }
     };
 
+    const options = {
+        filename: "gg.pdf",
+        method: "save",
+        resolution: Resolution.MEDIUM,
+
+        page: {
+            margin: 18
+        }
+    }
+
     return (
-        <div className="blogs-detail">
+        <>
+        <div className="back-arrow-div">
             <button className="back-arrow" onClick={() => history.go(-1)}>↩</button>
+        </div>
+        <div className="blogs-detail">
             <h2>
                 {!isOpeningIdValue && ( 
                     <form onSubmit={handleOpeningId}>
@@ -58,7 +72,7 @@ const BlogsDetail = () => {
                         {blogs && (
                             <article ref={targetRef}>
                                 <h2 className="title">{blogs.title}</h2>
-                                <pre>{blogs.body}</pre>
+                                <pre className="body">{blogs.body}</pre>
                                 <p className="details">Written by {blogs.author}</p>
                                 <p className="details">Last edited at {blogs.date}</p>
                             </article>
@@ -75,10 +89,11 @@ const BlogsDetail = () => {
                     <button className="blog-button">
                         <Link to={`/blogs/${id}/edit`}>Edit Blog</Link>
                     </button>
-                    <button onClick={() => toPDF()}>Download PDF</button>
+                    <button onClick={() => generatePDF(targetRef, options)}>Download As PDF</button>
                 </>
             )}
         </div>
+        </>
     );
 };
 
