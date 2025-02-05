@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-/* base styles */
 * {
   margin: 0;
   font-family: "Quicksand";
@@ -68,7 +67,7 @@
   color: darkgray;
   text-align: right;
 }
-.blogs-detail button {
+.blogs-detail button:not(.opening-id-visibility-button) {
   background: #f1356d;
   color: #fff;
   border: 0;
@@ -106,6 +105,20 @@
 }
 .blogs-detail .title {
   color: black;
+}
+.blogs-detail .opening-id-container {
+  position: relative;
+  display: flex;
+  gap: 5px;
+}
+.blogs-detail .opening-id-visibility-button {
+  border: None;
+  background-color: white;
+  font-size: 25px;
+}
+.blogs-detail .opening-id-visibility-button:hover {
+  color: #f1356d;
+  cursor: pointer;
 }
 .create {
   max-width: 400px;
@@ -202,22 +215,21 @@
   cursor: pointer;
 }
 
-/* From Uiverse.io by cssbuttons-io */ 
-/* Apply styles to all buttons except those with the "back-arrow" class */
-button:not(.back-arrow) {
+/* From Uiverse.io*/ 
+button:not(.back-arrow, .opening-id-visibility-button) {
   letter-spacing: 2.5px;
   border-radius: 45px;
   transition: all 0.5s ease 0s;
 }
 
-button:not(.back-arrow):hover {
+button:not(.back-arrow, .opening-id-visibility-button):hover {
   background-color: rgba(0, 180, 135, 0.5);
   box-shadow: 0px 15px 20px rgba(0, 212, 127, 0.5);
   color: black;
   transform: translateY(-7px);
 }
 
-button:not(.back-arrow):active {
+button:not(.back-arrow, .opening-id-visibility-button):active {
   transform: translateY(-1px);
 }
 

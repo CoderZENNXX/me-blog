@@ -11,8 +11,11 @@ const BlogsDetail = () => {
     const { data: blogs, IsError, IsLoading } = useFetch("http://localhost:8000/blogs/" + id);
     const [openingIdValue, setOpeningIdValue] = useState("");
     const [isOpeningIdValue, setIsOpeningIdValue] = useState(false);
-    const targetRef = useRef();
-    const history = useHistory();
+    const targetRef = useRef()
+    const history = useHistory()
+    const openingIdInputRef = useRef(null)
+    const submitOpeningIdButton = useRef(null)
+    const openingIdVisibilityButton = useRef(null)
 
     const handleDelete = () => {
         fetch("http://localhost:8000/blogs/" + blogs.id, {
@@ -32,6 +35,21 @@ const BlogsDetail = () => {
         }
     };
 
+    const changeInputIdVisibility = () => {
+        if (openingIdInputRef.current && openingIdInputRef.current.type === "password" && submitOpeningIdButton.current) {
+            openingIdInputRef.current.type = "text";
+            submitOpeningIdButton.current.disabled = true;
+            submitOpeningIdButton.current.innerText = "Click the eye icon to view!!"
+            openingIdVisibilityButton.current.style.color = "rgba(0, 180, 120)"
+        }
+        else {
+            openingIdInputRef.current.type = "password";
+            submitOpeningIdButton.current.disabled = false;
+            submitOpeningIdButton.current.innerText = "View Blog"
+            openingIdVisibilityButton.current.style.color = "black"
+        }
+    }
+
     const options = {
         filename: "blog.pdf",
         method: "save",
@@ -49,19 +67,32 @@ const BlogsDetail = () => {
         </div>
         <div className="blogs-detail">
             <h2>
-                {!isOpeningIdValue && ( 
+                {!isOpeningIdValue && (
+                    <> 
                     <form onSubmit={handleOpeningId}>
                         <label>Blog ID</label>
                         <p>(If there's no ID, click View Blog without any input.)</p>
-                        <input
-                            type="password"
-                            value={openingIdValue}
-                            placeholder="Blog ID"
-                            onChange={(e) => setOpeningIdValue(e.target.value)}
-                        />
-                        {!IsLoading && <button>View Blog</button>}
+                        <div className="opening-id-container">
+                            <input
+                                ref={openingIdInputRef}
+                                type="password"
+                                value={openingIdValue}
+                                placeholder="Blog ID"
+                                className="opening-id-input"
+                                onChange={(e) => setOpeningIdValue(e.target.value)}
+                            />
+                            <button 
+                            ref={openingIdVisibilityButton}
+                            className="opening-id-visibility-button" 
+                            type="button"
+                            onClick={changeInputIdVisibility}>
+                                👁
+                            </button>
+                        </div>
+                        {!IsLoading && <button ref={submitOpeningIdButton} type="submit">View Blog</button>}
                         {IsLoading && <button disabled>Checking ID</button>}
                     </form>
+                    </>
                 )
                 }   
 
