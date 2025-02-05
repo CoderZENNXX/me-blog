@@ -47,8 +47,11 @@ const UpdateBlog = () => {
     }
 
     return (
-        <div className="update">
+        <>
+        <div className="back-arrow-div">
             <button className="back-arrow" onClick={() => history.go(-1)}>↩</button>
+        </div>
+        <div className="update">
             <h2>Edit Blog</h2>
             <form onSubmit={handleEdit}>
                 <label>Title:</label>
@@ -56,6 +59,7 @@ const UpdateBlog = () => {
                 type="text"
                 required
                 value={title}
+                placeholder="Title"
                 onChange={(e) => setTitle(e.target.value)}
                 >
                 </input>
@@ -64,6 +68,7 @@ const UpdateBlog = () => {
                 <textarea
                 required
                 value={body}
+                placeholder="Text"
                 onChange={(e) => setBody(e.target.value)}
                 >
                 </textarea>
@@ -73,6 +78,7 @@ const UpdateBlog = () => {
                 type="text"
                 required
                 value={author}
+                placeholder="Author"
                 onChange={(e) => setAuthor(e.target.value)}
                 >
                 </input>
@@ -81,6 +87,7 @@ const UpdateBlog = () => {
                 <input 
                 type="text"
                 value={openingId}
+                placeholder="ID (optional)"
                 onChange={(e) => setOpeningId(e.target.value)}
                 >
                 </input>
@@ -90,6 +97,7 @@ const UpdateBlog = () => {
 
             </form>
         </div>
+        </>
     );
 }
  

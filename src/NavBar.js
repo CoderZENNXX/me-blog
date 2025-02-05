@@ -5,8 +5,8 @@ const NavBar = () => {
         <nav className="navbar">
             <h1>Me-Blog</h1>
             <div className="links">
-                <Link to="/">Home</Link>
-                <Link to="/createBlog">New Blog +</Link>
+                <Link className="page-link home" to="/">Home</Link>
+                <Link className="page-link new-blog"to="/createBlog">New Blog +</Link>
             </div>
         </nav>
 

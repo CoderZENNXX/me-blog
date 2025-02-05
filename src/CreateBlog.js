@@ -33,15 +33,19 @@ const CreateBlog = () => {
     }
 
     return (
-        <div className="create">
+        <>
+        <div className="back-arrow-div">
             <button className="back-arrow" onClick={() => history.go(-1)}>↩</button>
+        </div>
+        <div className="create">
             <h2>Add a new blog</h2>
             <form onSubmit={handleSubmit}>
-                <label>Title:</label>
+            <label>Title:</label>
                 <input 
                 type="text"
                 required
                 value={title}
+                placeholder="Title"
                 onChange={(e) => setTitle(e.target.value)}
                 >
                 </input>
@@ -50,6 +54,7 @@ const CreateBlog = () => {
                 <textarea
                 required
                 value={body}
+                placeholder="Text"
                 onChange={(e) => setBody(e.target.value)}
                 >
                 </textarea>
@@ -59,6 +64,7 @@ const CreateBlog = () => {
                 type="text"
                 required
                 value={author}
+                placeholder="Author"
                 onChange={(e) => setAuthor(e.target.value)}
                 >
                 </input>
@@ -67,6 +73,7 @@ const CreateBlog = () => {
                 <input 
                 type="text"
                 value={openingId}
+                placeholder="ID (optional)"
                 onChange={(e) => setOpeningId(e.target.value)}
                 >
                 </input>
@@ -76,6 +83,7 @@ const CreateBlog = () => {
 
             </form>
         </div>
+        </>
     );
 }
  

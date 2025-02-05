@@ -33,7 +33,7 @@ const BlogsDetail = () => {
     };
 
     const options = {
-        filename: "gg.pdf",
+        filename: "blog.pdf",
         method: "save",
         resolution: Resolution.MEDIUM,
 
@@ -56,9 +56,9 @@ const BlogsDetail = () => {
                         <input
                             type="password"
                             value={openingIdValue}
+                            placeholder="Blog ID"
                             onChange={(e) => setOpeningIdValue(e.target.value)}
                         />
-                        <br/>
                         {!IsLoading && <button>View Blog</button>}
                         {IsLoading && <button disabled>Checking ID</button>}
                     </form>
@@ -83,13 +83,13 @@ const BlogsDetail = () => {
 
             {isOpeningIdValue && (
                 <>
-                    <button className="blog-button" onClick={handleDelete}>
+                    <button className="blog-button delete" onClick={handleDelete}>
                         Delete Blog
                     </button>
-                    <button className="blog-button">
-                        <Link to={`/blogs/${id}/edit`}>Edit Blog</Link>
+                    <button className="blog-button update">
+                        <Link className="update-link"to={`/blogs/${id}/edit`}>Edit Blog</Link>
                     </button>
-                    <button onClick={() => generatePDF(targetRef, options)}>Download As PDF</button>
+                    <button onClick={() => generatePDF(targetRef, options)}>Download as PDF</button>
                 </>
             )}
         </div>

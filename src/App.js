@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import BlogsDetail from "./BlogsDetail";
 import Page404 from "./Page404";
 import UpdateBlog from "./UpdateBlog";
+import './style.css';
 
 function App() {
   return (
