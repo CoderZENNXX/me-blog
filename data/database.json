@@ -1,12 +1,12 @@
 {
   "blogs": [
     {
+      "id": "Me-Blog",
       "title": "Me-Blog",
       "body": "Me-Blog ✍️🔒 is a blogging platform for secure content creation. \nCreate & edit blogs 📝, protect them with an ID 🔐, and download as PDFs 📄. \nPerfect for journaling, sharing and content creation. 🔒",
       "author": "CoderZENNXX",
       "openingId": "",
-      "date": "5/2/2025, 15:59",
-      "id": "Me-Blog"
+      "date": "5/2/2025, 15:59"
     },
     {
       "id": "42e3",
